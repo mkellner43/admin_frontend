@@ -1,0 +1,48 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+.error {
+  color: red;
+}
+.success {
+  color: green;
+}
+#success-btn {
+  background-color: green;
+}
+.bg-red{
+  background-color: red !important;
+}
+#error-btn {
+  background-color: red;
+}
+.mt-1 {
+  margin-top: 1rem;
+}
+.mt-2{
+  margin-top: 2rem;
+}
+.center{
+  text-align: center;
+}
+.btn {
+  height: 2rem;
+  background-color: #4681f4;
+  border: none;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+a.btn{
+  color: black;
+  text-decoration: none;
+  height: 2rem;
+}
+.notify {
+  z-index: 1000;
+  position: absolute;
+}

@@ -1,0 +1,21 @@
+nav {
+  display: flex;
+  justify-content: space-evenly;
+  box-shadow: 0 0 8px rgb(163, 155, 155);
+  padding: 1rem;
+}
+nav > a,
+nav > button {
+  text-decoration: none;
+  color: black;
+  border: 1px solid rgb(218, 214, 214);
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  background-color: #ffff;
+  cursor: pointer;
+  box-shadow: 0 0 8px #6f6f6f;
+}
+nav > a:hover,
+nav > button:hover {
+  box-shadow: 0 0 18px #6f6f6f;
+}

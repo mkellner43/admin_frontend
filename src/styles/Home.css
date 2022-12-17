@@ -1,0 +1,29 @@
+.mt-1 {
+  margin-top: 1rem;
+}
+.home-container {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.blog--card {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem;
+  box-shadow: 0 0 8px #6f6f6f;
+  padding: 1rem;
+  width: 350px;
+  height: 150px;
+  border-radius: 0.5rem;
+  overflow: scroll;
+}
+.blog-card--link {
+  text-decoration: none;
+  color: black;
+}
+.blog--card:hover {
+  box-shadow: 0 0 18px #6f6f6f;
+}

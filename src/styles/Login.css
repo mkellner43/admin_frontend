@@ -1,0 +1,27 @@
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+}
+input{
+  height: 1rem;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid black;
+}
+textarea {
+  resize: none;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid black;
+}
+select {
+  height: 2rem;
+  border-radius: 0.5rem;
+  border: 1px solid black;
+}
+.mid-screen {
+  height: 50vh;
+}

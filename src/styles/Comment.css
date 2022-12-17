@@ -1,0 +1,46 @@
+.comment-cards {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.comment-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 8px #6f6f6f;
+  width: 350px;
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+.author-date {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 100%;
+}
+.comments {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.form--comments {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2rem;
+  box-shadow: 0 0 8px #6f6f6f;
+  width: 350px;
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+.comment--input {
+  height: 2rem;
+  min-width: 12rem;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  border: 1px solid black;
+}
