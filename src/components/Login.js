@@ -1,25 +1,18 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import "../styles/Login.css"
 
-const Login = (props) => {
+const Login = ({setToken}) => {
   const navigate = useNavigate()
-  const {setToken, error} = props
-  const [username, setUsername] = useState('')
-  const [password, setPassword] = useState('')
+  const username = useRef(null)
+  const password = useRef(null)
+  const [error, setErrors] = useState(null)
 
-  const handleChange = (e) => {
-    e.preventDefault()
-    e.target.name === 'username' ?
-      setUsername(e.target.value) 
-      :
-      setPassword(e.target.value)
-  }
   const handleSubmit = (e) => {
     e.preventDefault()
     const data = {
-      username: e.target.form.username.value,
-      password: e.target.form.password.value
+      username: username.current.value,
+      password: password.current.value
     }
     fetch(`http://localhost:3000/admin/login`, {
       method: 'POST', headers: {'Content-Type': 'application/json'},
@@ -27,21 +20,41 @@ const Login = (props) => {
     })
     .then((res) => res.json())
     .then((data) => { 
+      if(data.status !== 200) return setErrors(data.msg)
       setToken(data)
-      if(data._id) {navigate('/')}
+      navigate('/')
     })
-    .catch((error) => {
-      console.error("Error:", error)
+    .catch((err) => {
+      console.error("Error:", err)
+      setErrors(err)
     })
   }
   return (
-      <form className='mid-screen'>
-        <h1>Log in</h1>
-        <input className='mt-1' name='username' type='text' onChange={handleChange} value={username} placeholder="username" />
-        <input className='mt-1' name='password' type='password' onChange={handleChange} value={password} placeholder="password" />
-        <button className='btn mt-1' type="submit" onClick={handleSubmit}>Login</button>
-        <p className='error'>{error}</p>
-      </form>
+    <form>
+      <h1>Log in</h1>
+      <input 
+        ref={username}
+        className='mt-1' 
+        data-error={error ? true : false}
+        type='text' 
+        placeholder="username"
+      />
+      <input 
+        ref={password}
+        className='mt-1' 
+        data-error={error ? true : false} 
+        type='password' 
+        placeholder="password" 
+      />
+      <button 
+        className='btn mt-1'
+        type="submit"
+        onClick={handleSubmit}
+      >
+        Login
+      </button>
+      <p className='error mt-1'>{error}</p>
+    </form>
   )
 }
 

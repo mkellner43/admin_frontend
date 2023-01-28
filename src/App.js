@@ -7,12 +7,14 @@ import useToken from './useToken';
 import NewBlog from './components/NewBlog';
 import ShowBlog from './components/ShowBlog';
 import EditBlog from './components/EditBlog';
+
 function App() {
   let {token, setToken} = useToken();
-  if(!token || token?.msg) {
-    const errorMsg = token ? token?.msg : ''
-    return <Login setToken={setToken} error={errorMsg}/> //make this prettier - Navigate with conditionals
+
+  if(!token) {
+    return <Login setToken={setToken} />
   }
+  
   return (
     <>
     <Nav setToken={setToken}/>

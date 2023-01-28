@@ -1,5 +1,7 @@
 form {
   display: flex;
+  position: relative;
+  top: 20vh;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -22,6 +24,7 @@ select {
   border-radius: 0.5rem;
   border: 1px solid black;
 }
-.mid-screen {
-  height: 50vh;
+
+[data-error='true'] {
+  border-color: red;
 }
